@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/angular-1.0.1.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+Your name: <input type="text" ng-model="yourname" placeholder="World">
+<hr>
+Hello {{yourname || 'World'}}!
+<p>
+    Nothing here {{ 'yet' + '!'}}
+</p>
+<p>
+    1+1={{1+1 }}
+<p/>
+
+<!-- <div ng-controller="PhoneListCtrl">
+    <ul>
+        <li ng-repeat="phone in phones">
+            {{phone.name }}
+            <p>
+             {{phone.snippet}}
+            </p>
+        </li>
+    </ul>
+ </div>-->
+Search: <input ng-model="query">
+<div ng-controller="test1">
+    <ul>
+        <li ng-repeat="book in books | filter:query">
+            {{book.name }}:{{book.price}}
+        </li>
+
+    </ul>
+
+</div>
+
+</body>
+</html>
