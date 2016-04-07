@@ -34,5 +34,18 @@ function test1($scope) {
     $scope.orderProp = 'age';
 }
 
+var test3=angular.module('app_test3',[]);
+test3.controller('test3',function($scope,$timeout,$http ){
+    $scope.header="this is a header";
+    $scope.names=["tom","lucy","anni"];
+    $timeout(function () {
+        $scope.header="oh!this is not a header."
+    },2000);
+    $http.get("http://localhost:63342/test/Customers_JSON.php").success(function(data){
+        $scope.datas = data.records;
+    });
+});
+
+
 
 

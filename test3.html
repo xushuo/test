@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app_test3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/angular-1.0.1.min.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+</head>
+<body>
+    <div class="container-fluid" ng-controller="test3">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <h3>{{header}}</h3>
+                    <section>
+                        <select ng-model="selectNames" ng-options="name for name in names"></select>
+                    </section>
+                    <section  ng-repeat="data in datas|orderBy: 'City'">
+                        <p>{{$index}} :</p>
+                        <p ng-if="$even" style="background-color: red" >名称：{{data.Name}}</p>
+                        <p ng-if="$odd" style="background-color: yellow" >名称：{{data.Name}}</p>
+                        <p>城市: {{data.City | uppercase}}</p>
+                        <p>国家：{{data.Country}}</p>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
