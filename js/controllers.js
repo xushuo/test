@@ -46,6 +46,13 @@ test3.controller('test3',function($scope,$timeout,$http ){
     });
 });
 
-
+test3.directive('ff',function(){
+    return {
+        restrict:'E',
+        template:'<div>UOU<span>呵呵哒</span>' +
+        '<select><option>1</option><option>2</option></select></div>',
+        replace:true
+    };
+});
 
 
